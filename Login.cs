@@ -29,7 +29,7 @@ namespace MedicalStoreManagementSystem
                     string query = $"SELECT username FROM medicalStoreDatabase WHERE username = '{textBox_username.Text}'";
                     SqlDataReader dr = db.getSingleData(query);
 
-                    if(dr.Read())
+                if (textBox_username.Text != "")
                     {
 
                     }
