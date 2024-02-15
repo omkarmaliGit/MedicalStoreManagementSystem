@@ -19,36 +19,62 @@ namespace MedicalStoreManagementSystem
         }
 
         DataBase db = new DataBase();
+        SqlDataReader dr;
+        string query;
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            if(textBox_username.Text != "")
+            try
             {
-                try
-                {
-                    string query = $"SELECT username FROM medicalStoreDatabase WHERE username = '{textBox_username.Text}'";
-                    SqlDataReader dr = db.getSingleData(query);
-
                 if (textBox_username.Text != "")
-                    {
+                {
+                    query = $"SELECT username FROM admin WHERE username = '{textBox_username.Text}'";
+                    dr = db.getData(query);
 
+                    if (dr.Read())
+                    {
+                        string username = textBox_username.Text;
+                        db.closeConnection();
+
+                        if (textBox_password.Text != "")
+                        {
+                            query = $"SELECT password FROM admin WHERE username = '{textBox_username.Text}'";
+                            dr = db.getData(query);
+                            dr.Read();
+
+                            if (dr.GetValue(0).ToString() == textBox_password.Text)
+                            {
+                                Dashboard d = new Dashboard(username);
+                                d.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Incorrect Password");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Enter Password");
+                        }
                     }
                     else
                     {
-
+                        MessageBox.Show("User Not Found");
                     }
-
                 }
-                catch(Exception ex) {
-                    MessageBox.Show(ex.Message);
-                }
-                finally{
-                    db.closeConnection();
+                else
+                {
+                    MessageBox.Show("Enter Username");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Enter Username");
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                db.closeConnection();
             }
         }
     }
