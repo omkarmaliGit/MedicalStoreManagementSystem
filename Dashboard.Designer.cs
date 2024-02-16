@@ -121,6 +121,7 @@
             this.viewMEDICINE_ToolStripMenuItem.Name = "viewMEDICINE_ToolStripMenuItem";
             this.viewMEDICINE_ToolStripMenuItem.Size = new System.Drawing.Size(355, 42);
             this.viewMEDICINE_ToolStripMenuItem.Text = "VIEW MEDICINE";
+            this.viewMEDICINE_ToolStripMenuItem.Click += new System.EventHandler(this.viewMEDICINE_ToolStripMenuItem_Click);
             // 
             // updateMEDICINE_ToolStripMenuItem
             // 
@@ -133,6 +134,7 @@
             this.removeMEDICINE_ToolStripMenuItem.Name = "removeMEDICINE_ToolStripMenuItem";
             this.removeMEDICINE_ToolStripMenuItem.Size = new System.Drawing.Size(355, 42);
             this.removeMEDICINE_ToolStripMenuItem.Text = "REMOVE MEDICINE";
+            this.removeMEDICINE_ToolStripMenuItem.Click += new System.EventHandler(this.removeMEDICINE_ToolStripMenuItem_Click);
             // 
             // COMPANY_ToolStripMenuItem
             // 
@@ -157,6 +159,7 @@
             this.viewCOMPANY_ToolStripMenuItem.Name = "viewCOMPANY_ToolStripMenuItem";
             this.viewCOMPANY_ToolStripMenuItem.Size = new System.Drawing.Size(361, 42);
             this.viewCOMPANY_ToolStripMenuItem.Text = "VIEW COMPANY";
+            this.viewCOMPANY_ToolStripMenuItem.Click += new System.EventHandler(this.viewCOMPANY_ToolStripMenuItem_Click);
             // 
             // updateCOMPANY_ToolStripMenuItem
             // 

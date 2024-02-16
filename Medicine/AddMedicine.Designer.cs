@@ -43,7 +43,8 @@
             // label_addMedicine_Title
             // 
             this.label_addMedicine_Title.AutoSize = true;
-            this.label_addMedicine_Title.Location = new System.Drawing.Point(591, 36);
+            this.label_addMedicine_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(75)))));
+            this.label_addMedicine_Title.Location = new System.Drawing.Point(602, 36);
             this.label_addMedicine_Title.Name = "label_addMedicine_Title";
             this.label_addMedicine_Title.Size = new System.Drawing.Size(213, 37);
             this.label_addMedicine_Title.TabIndex = 0;

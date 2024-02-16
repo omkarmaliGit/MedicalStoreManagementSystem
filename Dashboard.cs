@@ -61,6 +61,14 @@ namespace MedicalStoreManagementSystem
             ac.Show();
         }
 
+        private void viewCOMPANY_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel.Controls.Clear();
+            ViewCompany vc = new ViewCompany() { TopLevel = false, TopMost = true };
+            vc.FormBorderStyle = FormBorderStyle.None;
+            panel.Controls.Add(vc);
+            vc.Show();
+        }
 
         //medicine
         private void addMEDICINE_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,6 +80,22 @@ namespace MedicalStoreManagementSystem
             am.Show();
         }
 
-        
+        private void viewMEDICINE_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel.Controls.Clear();
+            ViewMedicine vm = new ViewMedicine() { TopLevel = false, TopMost = true };
+            vm.FormBorderStyle = FormBorderStyle.None;
+            panel.Controls.Add(vm);
+            vm.Show();
+        }
+
+        private void removeMEDICINE_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel.Controls.Clear();
+            RemoveMedicine rm = new RemoveMedicine() { TopLevel = false, TopMost = true };
+            rm.FormBorderStyle = FormBorderStyle.None;
+            panel.Controls.Add(rm);
+            rm.Show();
+        }
     }
 }

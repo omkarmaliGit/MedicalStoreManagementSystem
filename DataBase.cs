@@ -29,8 +29,7 @@ namespace MedicalStoreManagementSystem
         internal DataTable getTable(string query)
         {
             connectDB.Open();
-            cmd = new SqlCommand(query, connectDB);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter(query, connectDB);
             DataTable table = new DataTable();
             da.Fill(table);
             return table;
