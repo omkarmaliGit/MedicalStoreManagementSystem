@@ -175,7 +175,7 @@ namespace MedicalStoreManagementSystem
         private void viewSALES_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panel.Controls.Clear();
-            ViewStock vis = new ViewStock() { TopLevel = false, TopMost = true };
+            ViewSales vis = new ViewSales() { TopLevel = false, TopMost = true };
             vis.FormBorderStyle = FormBorderStyle.None;
             panel.Controls.Add(vis);
             vis.Show();

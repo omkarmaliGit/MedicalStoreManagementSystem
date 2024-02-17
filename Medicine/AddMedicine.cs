@@ -79,6 +79,10 @@ namespace MedicalStoreManagementSystem.Medicine
                                         {
                                             query = $"INSERT INTO medicine (medicineName, genericName, medicineType, companyName) values ('{textBox_medicineName.Text}','{textBox_genericName.Text}','{comboBox_medicineType.Text}','{comboBox_companyName.Text}')";
                                             db.setData(query);
+
+                                            query = $"INSERT INTO stockRecord (medicineName) values ('{textBox_medicineName.Text}')";
+                                            db.setData(query);
+                                            
                                             MessageBox.Show("Medicine added to list");
 
                                             textBox_medicineName.Text = "";
@@ -86,6 +90,7 @@ namespace MedicalStoreManagementSystem.Medicine
                                             comboBox_medicineType.Text = "";
                                             comboBox_companyName.Text = "";
                                             textBox_medicineName.Focus();
+
                                         }
                                         catch (SqlException se)
                                         {

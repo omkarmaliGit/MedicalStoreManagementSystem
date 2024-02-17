@@ -78,6 +78,7 @@
             this.comboBox_medicineName.Name = "comboBox_medicineName";
             this.comboBox_medicineName.Size = new System.Drawing.Size(743, 45);
             this.comboBox_medicineName.TabIndex = 3;
+            this.comboBox_medicineName.SelectedIndexChanged += new System.EventHandler(this.comboBox_medicineName_SelectedIndexChanged);
             // 
             // comboBox_companyName
             // 
