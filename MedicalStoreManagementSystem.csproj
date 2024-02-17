@@ -52,6 +52,18 @@
     <Compile Include="Company\AddCompany.Designer.cs">
       <DependentUpon>AddCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="Company\RemoveCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\RemoveCompany.Designer.cs">
+      <DependentUpon>RemoveCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\UpdateCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company\UpdateCompany.Designer.cs">
+      <DependentUpon>UpdateCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Company\ViewCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     <Compile Include="Medicine\RemoveMedicine.Designer.cs">
       <DependentUpon>RemoveMedicine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Medicine\UpdateMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medicine\UpdateMedicine.Designer.cs">
+      <DependentUpon>UpdateMedicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Medicine\ViewMedicine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,8 +109,62 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\SalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\SalesReport.Designer.cs">
+      <DependentUpon>SalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\StockReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\StockReport.Designer.cs">
+      <DependentUpon>StockReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\AddSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\AddSales.Designer.cs">
+      <DependentUpon>AddSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\UpdateSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\UpdateSales.Designer.cs">
+      <DependentUpon>UpdateSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\ViewSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\ViewSales.Designer.cs">
+      <DependentUpon>ViewSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\AddStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\AddStock.Designer.cs">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\UpdateStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\UpdateStock.Designer.cs">
+      <DependentUpon>UpdateStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\ViewStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\ViewStock.Designer.cs">
+      <DependentUpon>ViewStock.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Company\AddCompany.resx">
       <DependentUpon>AddCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\RemoveCompany.resx">
+      <DependentUpon>RemoveCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company\UpdateCompany.resx">
+      <DependentUpon>UpdateCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Company\ViewCompany.resx">
       <DependentUpon>ViewCompany.cs</DependentUpon>
@@ -109,6 +181,9 @@
     <EmbeddedResource Include="Medicine\RemoveMedicine.resx">
       <DependentUpon>RemoveMedicine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Medicine\UpdateMedicine.resx">
+      <DependentUpon>UpdateMedicine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Medicine\ViewMedicine.resx">
       <DependentUpon>ViewMedicine.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +196,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Stock\AddStock.resx">
+      <DependentUpon>AddStock.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,5 +216,6 @@
     <Content Include="Images\medicineIcon.png" />
     <Content Include="Images\profile.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

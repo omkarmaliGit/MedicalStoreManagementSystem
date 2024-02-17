@@ -33,6 +33,7 @@
             this.ADMIN_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PROFILE_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LOGOUT_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EXIT_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MEDICINE_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMEDICINE_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMEDICINE_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,14 +44,19 @@
             this.viewCOMPANY_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateCOMPANY_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeCOMPANY_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sTOCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aDDSTOCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vIEWSTOCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEPORTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.STOCK_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addSTOCK_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewSTOCK_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateSTOCK_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SALES_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addSALES_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewSALES_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateSALES_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.REPORT_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockREPORT_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesREPORT_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel = new System.Windows.Forms.Panel();
             this.label_welcome = new System.Windows.Forms.Label();
-            this.EXIT_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -63,9 +69,9 @@
             this.ADMIN_ToolStripMenuItem,
             this.MEDICINE_ToolStripMenuItem,
             this.COMPANY_ToolStripMenuItem,
-            this.sTOCKToolStripMenuItem,
-            this.sALESToolStripMenuItem,
-            this.rEPORTToolStripMenuItem});
+            this.STOCK_ToolStripMenuItem,
+            this.SALES_ToolStripMenuItem,
+            this.REPORT_ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MinimumSize = new System.Drawing.Size(2840, 50);
             this.menuStrip1.Name = "menuStrip1";
@@ -98,6 +104,13 @@
             this.LOGOUT_ToolStripMenuItem.Text = "LOG OUT";
             this.LOGOUT_ToolStripMenuItem.Click += new System.EventHandler(this.LOGOUT_ToolStripMenuItem_Click);
             // 
+            // EXIT_ToolStripMenuItem
+            // 
+            this.EXIT_ToolStripMenuItem.Name = "EXIT_ToolStripMenuItem";
+            this.EXIT_ToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
+            this.EXIT_ToolStripMenuItem.Text = "EXIT";
+            this.EXIT_ToolStripMenuItem.Click += new System.EventHandler(this.EXIT_ToolStripMenuItem_Click);
+            // 
             // MEDICINE_ToolStripMenuItem
             // 
             this.MEDICINE_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -128,6 +141,7 @@
             this.updateMEDICINE_ToolStripMenuItem.Name = "updateMEDICINE_ToolStripMenuItem";
             this.updateMEDICINE_ToolStripMenuItem.Size = new System.Drawing.Size(355, 42);
             this.updateMEDICINE_ToolStripMenuItem.Text = "UPDATE MEDICINE";
+            this.updateMEDICINE_ToolStripMenuItem.Click += new System.EventHandler(this.updateMEDICINE_ToolStripMenuItem_Click);
             // 
             // removeMEDICINE_ToolStripMenuItem
             // 
@@ -166,45 +180,99 @@
             this.updateCOMPANY_ToolStripMenuItem.Name = "updateCOMPANY_ToolStripMenuItem";
             this.updateCOMPANY_ToolStripMenuItem.Size = new System.Drawing.Size(361, 42);
             this.updateCOMPANY_ToolStripMenuItem.Text = "UPDATE COMPANY";
+            this.updateCOMPANY_ToolStripMenuItem.Click += new System.EventHandler(this.updateCOMPANY_ToolStripMenuItem_Click_1);
             // 
             // removeCOMPANY_ToolStripMenuItem
             // 
             this.removeCOMPANY_ToolStripMenuItem.Name = "removeCOMPANY_ToolStripMenuItem";
             this.removeCOMPANY_ToolStripMenuItem.Size = new System.Drawing.Size(361, 42);
             this.removeCOMPANY_ToolStripMenuItem.Text = "REMOVE COMPANY";
+            this.removeCOMPANY_ToolStripMenuItem.Click += new System.EventHandler(this.removeCOMPANY_ToolStripMenuItem_Click_1);
             // 
-            // sTOCKToolStripMenuItem
+            // STOCK_ToolStripMenuItem
             // 
-            this.sTOCKToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aDDSTOCKToolStripMenuItem,
-            this.vIEWSTOCKToolStripMenuItem});
-            this.sTOCKToolStripMenuItem.Name = "sTOCKToolStripMenuItem";
-            this.sTOCKToolStripMenuItem.Size = new System.Drawing.Size(117, 40);
-            this.sTOCKToolStripMenuItem.Text = "STOCK";
+            this.STOCK_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addSTOCK_ToolStripMenuItem,
+            this.viewSTOCK_ToolStripMenuItem,
+            this.updateSTOCK_ToolStripMenuItem});
+            this.STOCK_ToolStripMenuItem.Name = "STOCK_ToolStripMenuItem";
+            this.STOCK_ToolStripMenuItem.Size = new System.Drawing.Size(117, 40);
+            this.STOCK_ToolStripMenuItem.Text = "STOCK";
             // 
-            // aDDSTOCKToolStripMenuItem
+            // addSTOCK_ToolStripMenuItem
             // 
-            this.aDDSTOCKToolStripMenuItem.Name = "aDDSTOCKToolStripMenuItem";
-            this.aDDSTOCKToolStripMenuItem.Size = new System.Drawing.Size(269, 42);
-            this.aDDSTOCKToolStripMenuItem.Text = "ADD STOCK";
+            this.addSTOCK_ToolStripMenuItem.Name = "addSTOCK_ToolStripMenuItem";
+            this.addSTOCK_ToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.addSTOCK_ToolStripMenuItem.Text = "ADD STOCK";
+            this.addSTOCK_ToolStripMenuItem.Click += new System.EventHandler(this.addSTOCK_ToolStripMenuItem_Click);
             // 
-            // vIEWSTOCKToolStripMenuItem
+            // viewSTOCK_ToolStripMenuItem
             // 
-            this.vIEWSTOCKToolStripMenuItem.Name = "vIEWSTOCKToolStripMenuItem";
-            this.vIEWSTOCKToolStripMenuItem.Size = new System.Drawing.Size(269, 42);
-            this.vIEWSTOCKToolStripMenuItem.Text = "VIEW STOCK";
+            this.viewSTOCK_ToolStripMenuItem.Name = "viewSTOCK_ToolStripMenuItem";
+            this.viewSTOCK_ToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.viewSTOCK_ToolStripMenuItem.Text = "VIEW STOCK";
+            this.viewSTOCK_ToolStripMenuItem.Click += new System.EventHandler(this.viewSTOCK_ToolStripMenuItem_Click);
             // 
-            // sALESToolStripMenuItem
+            // updateSTOCK_ToolStripMenuItem
             // 
-            this.sALESToolStripMenuItem.Name = "sALESToolStripMenuItem";
-            this.sALESToolStripMenuItem.Size = new System.Drawing.Size(108, 40);
-            this.sALESToolStripMenuItem.Text = "SALES";
+            this.updateSTOCK_ToolStripMenuItem.Name = "updateSTOCK_ToolStripMenuItem";
+            this.updateSTOCK_ToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.updateSTOCK_ToolStripMenuItem.Text = "UPDATE STOCK";
+            this.updateSTOCK_ToolStripMenuItem.Click += new System.EventHandler(this.updateSTOCK_ToolStripMenuItem_Click);
             // 
-            // rEPORTToolStripMenuItem
+            // SALES_ToolStripMenuItem
             // 
-            this.rEPORTToolStripMenuItem.Name = "rEPORTToolStripMenuItem";
-            this.rEPORTToolStripMenuItem.Size = new System.Drawing.Size(134, 40);
-            this.rEPORTToolStripMenuItem.Text = "REPORT";
+            this.SALES_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addSALES_ToolStripMenuItem,
+            this.viewSALES_ToolStripMenuItem,
+            this.updateSALES_ToolStripMenuItem});
+            this.SALES_ToolStripMenuItem.Name = "SALES_ToolStripMenuItem";
+            this.SALES_ToolStripMenuItem.Size = new System.Drawing.Size(108, 40);
+            this.SALES_ToolStripMenuItem.Text = "SALES";
+            // 
+            // addSALES_ToolStripMenuItem
+            // 
+            this.addSALES_ToolStripMenuItem.Name = "addSALES_ToolStripMenuItem";
+            this.addSALES_ToolStripMenuItem.Size = new System.Drawing.Size(298, 42);
+            this.addSALES_ToolStripMenuItem.Text = "ADD SALES";
+            this.addSALES_ToolStripMenuItem.Click += new System.EventHandler(this.addSALES_ToolStripMenuItem_Click);
+            // 
+            // viewSALES_ToolStripMenuItem
+            // 
+            this.viewSALES_ToolStripMenuItem.Name = "viewSALES_ToolStripMenuItem";
+            this.viewSALES_ToolStripMenuItem.Size = new System.Drawing.Size(298, 42);
+            this.viewSALES_ToolStripMenuItem.Text = "VIEW SALES";
+            this.viewSALES_ToolStripMenuItem.Click += new System.EventHandler(this.viewSALES_ToolStripMenuItem_Click);
+            // 
+            // updateSALES_ToolStripMenuItem
+            // 
+            this.updateSALES_ToolStripMenuItem.Name = "updateSALES_ToolStripMenuItem";
+            this.updateSALES_ToolStripMenuItem.Size = new System.Drawing.Size(298, 42);
+            this.updateSALES_ToolStripMenuItem.Text = "UPDATE SALES";
+            this.updateSALES_ToolStripMenuItem.Click += new System.EventHandler(this.updateSALES_ToolStripMenuItem_Click);
+            // 
+            // REPORT_ToolStripMenuItem
+            // 
+            this.REPORT_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stockREPORT_ToolStripMenuItem,
+            this.salesREPORT_ToolStripMenuItem});
+            this.REPORT_ToolStripMenuItem.Name = "REPORT_ToolStripMenuItem";
+            this.REPORT_ToolStripMenuItem.Size = new System.Drawing.Size(134, 40);
+            this.REPORT_ToolStripMenuItem.Text = "REPORT";
+            // 
+            // stockREPORT_ToolStripMenuItem
+            // 
+            this.stockREPORT_ToolStripMenuItem.Name = "stockREPORT_ToolStripMenuItem";
+            this.stockREPORT_ToolStripMenuItem.Size = new System.Drawing.Size(304, 42);
+            this.stockREPORT_ToolStripMenuItem.Text = "STOCK REPORT";
+            this.stockREPORT_ToolStripMenuItem.Click += new System.EventHandler(this.stockREPORT_ToolStripMenuItem_Click);
+            // 
+            // salesREPORT_ToolStripMenuItem
+            // 
+            this.salesREPORT_ToolStripMenuItem.Name = "salesREPORT_ToolStripMenuItem";
+            this.salesREPORT_ToolStripMenuItem.Size = new System.Drawing.Size(304, 42);
+            this.salesREPORT_ToolStripMenuItem.Text = "SALES REPORT";
+            this.salesREPORT_ToolStripMenuItem.Click += new System.EventHandler(this.salesREPORT_ToolStripMenuItem_Click);
             // 
             // panel
             // 
@@ -226,13 +294,6 @@
             this.label_welcome.Name = "label_welcome";
             this.label_welcome.Size = new System.Drawing.Size(0, 46);
             this.label_welcome.TabIndex = 0;
-            // 
-            // EXIT_ToolStripMenuItem
-            // 
-            this.EXIT_ToolStripMenuItem.Name = "EXIT_ToolStripMenuItem";
-            this.EXIT_ToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
-            this.EXIT_ToolStripMenuItem.Text = "EXIT";
-            this.EXIT_ToolStripMenuItem.Click += new System.EventHandler(this.EXIT_ToolStripMenuItem_Click);
             // 
             // Dashboard
             // 
@@ -265,9 +326,9 @@
         private System.Windows.Forms.ToolStripMenuItem LOGOUT_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MEDICINE_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem COMPANY_ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sTOCKToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sALESToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rEPORTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem STOCK_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SALES_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem REPORT_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addMEDICINE_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewMEDICINE_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateMEDICINE_ToolStripMenuItem;
@@ -277,9 +338,15 @@
         private System.Windows.Forms.ToolStripMenuItem viewCOMPANY_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateCOMPANY_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeCOMPANY_ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aDDSTOCKToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vIEWSTOCKToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addSTOCK_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewSTOCK_ToolStripMenuItem;
         private System.Windows.Forms.Label label_welcome;
         private System.Windows.Forms.ToolStripMenuItem EXIT_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateSTOCK_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addSALES_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewSALES_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateSALES_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockREPORT_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salesREPORT_ToolStripMenuItem;
     }
 }
