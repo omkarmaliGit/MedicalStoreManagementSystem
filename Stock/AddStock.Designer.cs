@@ -49,6 +49,7 @@
             // label_addStock
             // 
             this.label_addStock.AutoSize = true;
+            this.label_addStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(176)))), ((int)(((byte)(123)))));
             this.label_addStock.Location = new System.Drawing.Point(624, 28);
             this.label_addStock.Name = "label_addStock";
             this.label_addStock.Size = new System.Drawing.Size(175, 38);
@@ -143,12 +144,14 @@
             // 
             // button_addStock
             // 
+            this.button_addStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(176)))), ((int)(((byte)(123)))));
+            this.button_addStock.ForeColor = System.Drawing.SystemColors.Control;
             this.button_addStock.Location = new System.Drawing.Point(602, 562);
             this.button_addStock.Name = "button_addStock";
-            this.button_addStock.Size = new System.Drawing.Size(235, 69);
+            this.button_addStock.Size = new System.Drawing.Size(245, 70);
             this.button_addStock.TabIndex = 13;
             this.button_addStock.Text = "ADD TO STOCK";
-            this.button_addStock.UseVisualStyleBackColor = true;
+            this.button_addStock.UseVisualStyleBackColor = false;
             this.button_addStock.Click += new System.EventHandler(this.button_addStock_Click);
             // 
             // dateTimePicker_purchaseDate

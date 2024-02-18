@@ -36,6 +36,7 @@
             // label_viewCompany
             // 
             this.label_viewCompany.AutoSize = true;
+            this.label_viewCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(135)))), ((int)(((byte)(131)))));
             this.label_viewCompany.Location = new System.Drawing.Point(620, 28);
             this.label_viewCompany.Name = "label_viewCompany";
             this.label_viewCompany.Size = new System.Drawing.Size(214, 37);

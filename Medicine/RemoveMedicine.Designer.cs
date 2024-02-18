@@ -37,6 +37,7 @@
             // label_removeMedicine
             // 
             this.label_removeMedicine.AutoSize = true;
+            this.label_removeMedicine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.label_removeMedicine.Location = new System.Drawing.Point(580, 27);
             this.label_removeMedicine.Name = "label_removeMedicine";
             this.label_removeMedicine.Size = new System.Drawing.Size(264, 37);
@@ -62,12 +63,14 @@
             // 
             // button_removeMedicine
             // 
+            this.button_removeMedicine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
+            this.button_removeMedicine.ForeColor = System.Drawing.SystemColors.Control;
             this.button_removeMedicine.Location = new System.Drawing.Point(627, 365);
             this.button_removeMedicine.Name = "button_removeMedicine";
-            this.button_removeMedicine.Size = new System.Drawing.Size(178, 62);
+            this.button_removeMedicine.Size = new System.Drawing.Size(175, 70);
             this.button_removeMedicine.TabIndex = 3;
             this.button_removeMedicine.Text = "REMOVE";
-            this.button_removeMedicine.UseVisualStyleBackColor = true;
+            this.button_removeMedicine.UseVisualStyleBackColor = false;
             this.button_removeMedicine.Click += new System.EventHandler(this.button_removeMedicine_Click);
             // 
             // RemoveMedicine

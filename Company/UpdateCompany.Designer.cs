@@ -40,11 +40,11 @@
             // 
             // button_updateCompany
             // 
-            this.button_updateCompany.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button_updateCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(135)))), ((int)(((byte)(131)))));
             this.button_updateCompany.ForeColor = System.Drawing.SystemColors.Control;
             this.button_updateCompany.Location = new System.Drawing.Point(562, 517);
             this.button_updateCompany.Name = "button_updateCompany";
-            this.button_updateCompany.Size = new System.Drawing.Size(310, 81);
+            this.button_updateCompany.Size = new System.Drawing.Size(310, 70);
             this.button_updateCompany.TabIndex = 15;
             this.button_updateCompany.Text = "UPDATE COMPANY";
             this.button_updateCompany.UseVisualStyleBackColor = false;
@@ -95,6 +95,7 @@
             // label_UpdateCompany_Title
             // 
             this.label_UpdateCompany_Title.AutoSize = true;
+            this.label_UpdateCompany_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(135)))), ((int)(((byte)(131)))));
             this.label_UpdateCompany_Title.Location = new System.Drawing.Point(577, 50);
             this.label_UpdateCompany_Title.Name = "label_UpdateCompany_Title";
             this.label_UpdateCompany_Title.Size = new System.Drawing.Size(275, 38);

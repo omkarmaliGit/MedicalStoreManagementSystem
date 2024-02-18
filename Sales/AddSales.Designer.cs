@@ -55,12 +55,14 @@
             // 
             // button_addSales
             // 
+            this.button_addSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
+            this.button_addSales.ForeColor = System.Drawing.SystemColors.Control;
             this.button_addSales.Location = new System.Drawing.Point(602, 559);
             this.button_addSales.Name = "button_addSales";
-            this.button_addSales.Size = new System.Drawing.Size(235, 69);
+            this.button_addSales.Size = new System.Drawing.Size(240, 70);
             this.button_addSales.TabIndex = 27;
             this.button_addSales.Text = "ADD TO SALES";
-            this.button_addSales.UseVisualStyleBackColor = true;
+            this.button_addSales.UseVisualStyleBackColor = false;
             this.button_addSales.Click += new System.EventHandler(this.button_addSales_Click);
             // 
             // label_saleDate
@@ -144,6 +146,7 @@
             // label_addSales
             // 
             this.label_addSales.AutoSize = true;
+            this.label_addSales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
             this.label_addSales.Location = new System.Drawing.Point(616, 27);
             this.label_addSales.Name = "label_addSales";
             this.label_addSales.Size = new System.Drawing.Size(194, 38);

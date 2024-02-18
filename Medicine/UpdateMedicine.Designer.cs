@@ -43,6 +43,7 @@
             // label_updateMedicine
             // 
             this.label_updateMedicine.AutoSize = true;
+            this.label_updateMedicine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.label_updateMedicine.Location = new System.Drawing.Point(592, 49);
             this.label_updateMedicine.Name = "label_updateMedicine";
             this.label_updateMedicine.Size = new System.Drawing.Size(260, 37);
@@ -51,11 +52,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(75)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Location = new System.Drawing.Point(565, 535);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(324, 86);
+            this.button1.Size = new System.Drawing.Size(300, 70);
             this.button1.TabIndex = 18;
             this.button1.Text = "UPDATE MEDICINE";
             this.button1.UseVisualStyleBackColor = false;

@@ -43,7 +43,7 @@
             // label_addMedicine_Title
             // 
             this.label_addMedicine_Title.AutoSize = true;
-            this.label_addMedicine_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(75)))));
+            this.label_addMedicine_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.label_addMedicine_Title.Location = new System.Drawing.Point(602, 36);
             this.label_addMedicine_Title.Name = "label_addMedicine_Title";
             this.label_addMedicine_Title.Size = new System.Drawing.Size(213, 37);
@@ -131,11 +131,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(84)))), ((int)(((byte)(75)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Location = new System.Drawing.Point(584, 530);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 80);
+            this.button1.Size = new System.Drawing.Size(250, 70);
             this.button1.TabIndex = 9;
             this.button1.Text = "ADD MEDICINE";
             this.button1.UseVisualStyleBackColor = false;

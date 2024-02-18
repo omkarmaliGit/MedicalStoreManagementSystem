@@ -52,6 +52,7 @@
             // label_viewSalesEntry
             // 
             this.label_viewSalesEntry.AutoSize = true;
+            this.label_viewSalesEntry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
             this.label_viewSalesEntry.Location = new System.Drawing.Point(619, 24);
             this.label_viewSalesEntry.Name = "label_viewSalesEntry";
             this.label_viewSalesEntry.Size = new System.Drawing.Size(217, 38);

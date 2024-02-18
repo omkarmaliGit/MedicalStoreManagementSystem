@@ -36,6 +36,7 @@
             // label_viewMedicine
             // 
             this.label_viewMedicine.AutoSize = true;
+            this.label_viewMedicine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(85)))), ((int)(((byte)(75)))));
             this.label_viewMedicine.Location = new System.Drawing.Point(611, 28);
             this.label_viewMedicine.Name = "label_viewMedicine";
             this.label_viewMedicine.Size = new System.Drawing.Size(208, 37);

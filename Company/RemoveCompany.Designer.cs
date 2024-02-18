@@ -37,6 +37,7 @@
             // label_removeCompany_Title
             // 
             this.label_removeCompany_Title.AutoSize = true;
+            this.label_removeCompany_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(135)))), ((int)(((byte)(131)))));
             this.label_removeCompany_Title.Location = new System.Drawing.Point(555, 48);
             this.label_removeCompany_Title.Name = "label_removeCompany_Title";
             this.label_removeCompany_Title.Size = new System.Drawing.Size(281, 38);
@@ -62,12 +63,14 @@
             // 
             // button_removeCompany
             // 
+            this.button_removeCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(135)))), ((int)(((byte)(131)))));
+            this.button_removeCompany.ForeColor = System.Drawing.SystemColors.Control;
             this.button_removeCompany.Location = new System.Drawing.Point(531, 374);
             this.button_removeCompany.Name = "button_removeCompany";
-            this.button_removeCompany.Size = new System.Drawing.Size(325, 69);
+            this.button_removeCompany.Size = new System.Drawing.Size(325, 70);
             this.button_removeCompany.TabIndex = 3;
             this.button_removeCompany.Text = "REMOVE COMPANY";
-            this.button_removeCompany.UseVisualStyleBackColor = true;
+            this.button_removeCompany.UseVisualStyleBackColor = false;
             this.button_removeCompany.Click += new System.EventHandler(this.button_removeCompany_Click);
             // 
             // RemoveCompany

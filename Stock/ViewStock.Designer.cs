@@ -52,7 +52,8 @@
             // label_viewStockEntry
             // 
             this.label_viewStockEntry.AutoSize = true;
-            this.label_viewStockEntry.Location = new System.Drawing.Point(619, 27);
+            this.label_viewStockEntry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(176)))), ((int)(((byte)(123)))));
+            this.label_viewStockEntry.Location = new System.Drawing.Point(615, 26);
             this.label_viewStockEntry.Name = "label_viewStockEntry";
             this.label_viewStockEntry.Size = new System.Drawing.Size(224, 38);
             this.label_viewStockEntry.TabIndex = 2;

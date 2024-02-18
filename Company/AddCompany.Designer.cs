@@ -41,6 +41,7 @@
             // label_AddCompany_Title
             // 
             this.label_AddCompany_Title.AutoSize = true;
+            this.label_AddCompany_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(135)))), ((int)(((byte)(131)))));
             this.label_AddCompany_Title.Location = new System.Drawing.Point(603, 40);
             this.label_AddCompany_Title.Name = "label_AddCompany_Title";
             this.label_AddCompany_Title.Size = new System.Drawing.Size(219, 37);
@@ -98,11 +99,11 @@
             // 
             // button_addCompany
             // 
-            this.button_addCompany.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button_addCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(135)))), ((int)(((byte)(131)))));
             this.button_addCompany.ForeColor = System.Drawing.SystemColors.Control;
             this.button_addCompany.Location = new System.Drawing.Point(588, 525);
             this.button_addCompany.Name = "button_addCompany";
-            this.button_addCompany.Size = new System.Drawing.Size(264, 81);
+            this.button_addCompany.Size = new System.Drawing.Size(260, 70);
             this.button_addCompany.TabIndex = 7;
             this.button_addCompany.Text = "ADD COMPANY";
             this.button_addCompany.UseVisualStyleBackColor = false;

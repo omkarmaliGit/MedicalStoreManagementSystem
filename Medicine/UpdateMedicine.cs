@@ -110,7 +110,7 @@ namespace MedicalStoreManagementSystem.Medicine
                                 {
                                     try
                                     {
-                                        query = $"UPDATE medicine SET medicineName = '{comboBox_medicineName.Text}', genericName = '{textBox_genericName.Text}', medicineType = '{comboBox_medicineType.SelectedItem.ToString()}', companyName = '{comboBox_companyName.Text}' WHERE medicineName = '{comboBox_medicineName.Text}'";
+                                        query = $"UPDATE medicine SET medicineName = '{comboBox_medicineName.Text}', genericName = '{textBox_genericName.Text}', medicineType = '{comboBox_medicineType.SelectedItem}', companyName = '{comboBox_companyName.Text}' WHERE medicineName = '{comboBox_medicineName.Text}'";
                                         db.setData(query);
                                         MessageBox.Show("Medicine updated to list");
 
