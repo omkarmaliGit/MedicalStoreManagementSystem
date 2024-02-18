@@ -42,6 +42,8 @@
             this.button_addStock = new System.Windows.Forms.Button();
             this.dateTimePicker_purchaseDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_expiryDate = new System.Windows.Forms.DateTimePicker();
+            this.textBox_totalPrice = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_addStock
@@ -100,25 +102,26 @@
             // label_price
             // 
             this.label_price.AutoSize = true;
-            this.label_price.Location = new System.Drawing.Point(752, 282);
+            this.label_price.Location = new System.Drawing.Point(533, 282);
             this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(93, 38);
+            this.label_price.Size = new System.Drawing.Size(226, 38);
             this.label_price.TabIndex = 6;
-            this.label_price.Text = "PRICE";
+            this.label_price.Text = "PRICE PER UNIT";
             // 
             // textBox_quantity
             // 
             this.textBox_quantity.Location = new System.Drawing.Point(185, 344);
             this.textBox_quantity.Name = "textBox_quantity";
-            this.textBox_quantity.Size = new System.Drawing.Size(482, 42);
+            this.textBox_quantity.Size = new System.Drawing.Size(296, 42);
             this.textBox_quantity.TabIndex = 7;
             // 
             // textBox_price
             // 
-            this.textBox_price.Location = new System.Drawing.Point(759, 344);
+            this.textBox_price.Location = new System.Drawing.Point(540, 344);
             this.textBox_price.Name = "textBox_price";
-            this.textBox_price.Size = new System.Drawing.Size(482, 42);
+            this.textBox_price.Size = new System.Drawing.Size(311, 42);
             this.textBox_price.TabIndex = 8;
+            this.textBox_price.TextChanged += new System.EventHandler(this.textBox_price_TextChanged);
             // 
             // label_purchaseDate
             // 
@@ -165,11 +168,29 @@
             this.dateTimePicker_expiryDate.Size = new System.Drawing.Size(482, 42);
             this.dateTimePicker_expiryDate.TabIndex = 14;
             // 
+            // textBox_totalPrice
+            // 
+            this.textBox_totalPrice.Location = new System.Drawing.Point(913, 344);
+            this.textBox_totalPrice.Name = "textBox_totalPrice";
+            this.textBox_totalPrice.Size = new System.Drawing.Size(328, 42);
+            this.textBox_totalPrice.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(906, 282);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 38);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "TOTAL PRICE";
+            // 
             // AddStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 752);
+            this.Controls.Add(this.textBox_totalPrice);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker_purchaseDate);
             this.Controls.Add(this.dateTimePicker_expiryDate);
             this.Controls.Add(this.button_addStock);
@@ -211,5 +232,7 @@
         private System.Windows.Forms.Button button_addStock;
         private System.Windows.Forms.DateTimePicker dateTimePicker_purchaseDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker_expiryDate;
+        private System.Windows.Forms.TextBox textBox_totalPrice;
+        private System.Windows.Forms.Label label1;
     }
 }

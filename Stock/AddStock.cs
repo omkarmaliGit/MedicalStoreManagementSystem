@@ -70,7 +70,7 @@ namespace MedicalStoreManagementSystem.Stock
         {
             try
             {
-                query = $"SELECT companyName FROM medicine WHERE medicineName = '{comboBox_medicineName.Text}'";
+                query = $"SELECT companyName FROM medicine WHERE medicineName = '{comboBox_medicineName.SelectedItem}'";
                 dr = db.getData(query);
 
                 if (dr.Read())
@@ -88,6 +88,22 @@ namespace MedicalStoreManagementSystem.Stock
             }
         }
 
+        private void updateStock()
+        {
+            query = $"SELECT quantity FROM stockRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
+            dr = db.getData(query);
+            dr.Read();
+            int oldQuantity = Convert.ToInt32(dr[0].ToString());
+            int newQuantity = Convert.ToInt32(textBox_quantity.Text);
+            int updatedQuantity = oldQuantity + newQuantity;
+
+            db.closeConnection();
+
+            query = $"UPDATE stockRecord SET quantity = '{updatedQuantity}' WHERE medicineName = '{comboBox_medicineName.Text}'";
+            db.setData(query);
+            MessageBox.Show("quantity Updated");
+        }
+
         private void button_addStock_Click(object sender, EventArgs e)
         {
             try
@@ -100,30 +116,42 @@ namespace MedicalStoreManagementSystem.Stock
                         {
                             if (textBox_price.Text != "")
                             {
-                                if (dateTimePicker_expiryDate.Text != "")
+                                if (textBox_totalPrice.Text == Convert.ToString(Convert.ToInt32(textBox_quantity.Text)* Convert.ToInt32(textBox_price.Text)))
                                 {
-                                    query = $"INSERT INTO stock (medicineName, companyName, stockQuantity, stockPrice, expiryDate, purchaseDate) values ('{comboBox_medicineName.Text}','{comboBox_companyName.Text}','{textBox_quantity.Text}','{textBox_price.Text}',Convert(date, '{dateTimePicker_expiryDate.Text}', 103),Convert(date, '{dateTimePicker_purchaseDate.Text}', 103))";
-                                    db.setData(query);
-                                    MessageBox.Show("Stock Entry Done");
 
+                                    if (dateTimePicker_expiryDate.Text != "")
+                                    {
+                                        query = $"INSERT INTO stock (medicineName, companyName, stockQuantity, stockPrice, stockTotalPrice, expiryDate, purchaseDate) values ('{comboBox_medicineName.Text}','{comboBox_companyName.Text}','{textBox_quantity.Text}','{textBox_price.Text}', '{textBox_totalPrice.Text}',Convert(date, '{dateTimePicker_expiryDate.Text}', 103),Convert(date, '{dateTimePicker_purchaseDate.Text}', 103))";
+                                        db.setData(query);
+                                        MessageBox.Show("Stock Entry Done");
 
-                                    query = $"SELECT quantity FROM stockRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
-                                    dr = db.getData(query);
-                                    dr.Read();
-                                    int oldQuantity = Convert.ToInt32(dr[0].ToString());
-                                    int newQuantity = Convert.ToInt32(textBox_quantity.Text);
-                                    int updatedQuantity = oldQuantity + newQuantity;
+                                        query = $"SELECT medicineName FROM stockRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
+                                        dr = db.getData(query);
+                                        if (dr.Read())
+                                        {
+                                            db.closeConnection();
 
-                                    db.closeConnection();
+                                            updateStock();
+                                        }
+                                        else
+                                        {
+                                            db.closeConnection();
 
-                                    query = $"UPDATE stockRecord SET quantity = '{updatedQuantity}' WHERE medicineName = '{comboBox_medicineName.Text}'";
-                                    db.setData(query);
-                                    MessageBox.Show("quantity Updated");
+                                            query = $"INSERT INTO stockRecord (medicineName) values ('{comboBox_medicineName.Text}')";
+                                            db.setData(query);
+
+                                           updateStock();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Enter Expiry date");
+                                    }
 
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Enter Expiry date");
+                                    MessageBox.Show("Enter Total Price");
                                 }
                             }
                             else
@@ -157,6 +185,9 @@ namespace MedicalStoreManagementSystem.Stock
             }
         }
 
-
+        private void textBox_price_TextChanged(object sender, EventArgs e)
+        {
+            textBox_totalPrice.Text = Convert.ToString(Convert.ToInt32(textBox_quantity.Text) * Convert.ToInt32(textBox_price.Text));
+        }
     }
 }

@@ -40,20 +40,22 @@
             this.label_companyName = new System.Windows.Forms.Label();
             this.label_medicineName = new System.Windows.Forms.Label();
             this.label_addSales = new System.Windows.Forms.Label();
+            this.textBox_totalPrice = new System.Windows.Forms.TextBox();
+            this.label_totalPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dateTimePicker_saleDate
             // 
             this.dateTimePicker_saleDate.Enabled = false;
             this.dateTimePicker_saleDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_saleDate.Location = new System.Drawing.Point(177, 463);
+            this.dateTimePicker_saleDate.Location = new System.Drawing.Point(751, 470);
             this.dateTimePicker_saleDate.Name = "dateTimePicker_saleDate";
             this.dateTimePicker_saleDate.Size = new System.Drawing.Size(482, 42);
             this.dateTimePicker_saleDate.TabIndex = 29;
             // 
             // button_addSales
             // 
-            this.button_addSales.Location = new System.Drawing.Point(594, 555);
+            this.button_addSales.Location = new System.Drawing.Point(602, 559);
             this.button_addSales.Name = "button_addSales";
             this.button_addSales.Size = new System.Drawing.Size(235, 69);
             this.button_addSales.TabIndex = 27;
@@ -64,7 +66,7 @@
             // label_saleDate
             // 
             this.label_saleDate.AutoSize = true;
-            this.label_saleDate.Location = new System.Drawing.Point(170, 405);
+            this.label_saleDate.Location = new System.Drawing.Point(744, 408);
             this.label_saleDate.Name = "label_saleDate";
             this.label_saleDate.Size = new System.Drawing.Size(162, 38);
             this.label_saleDate.TabIndex = 26;
@@ -76,6 +78,7 @@
             this.textBox_price.Name = "textBox_price";
             this.textBox_price.Size = new System.Drawing.Size(482, 42);
             this.textBox_price.TabIndex = 24;
+            this.textBox_price.TextChanged += new System.EventHandler(this.textBox_price_TextChanged);
             // 
             // textBox_quantity
             // 
@@ -89,9 +92,9 @@
             this.label_price.AutoSize = true;
             this.label_price.Location = new System.Drawing.Point(744, 275);
             this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(93, 38);
+            this.label_price.Size = new System.Drawing.Size(226, 38);
             this.label_price.TabIndex = 22;
-            this.label_price.Text = "PRICE";
+            this.label_price.Text = "PRICE PER UNIT";
             // 
             // label_quantity
             // 
@@ -146,11 +149,29 @@
             this.label_addSales.TabIndex = 16;
             this.label_addSales.Text = "SALES ENTRY";
             // 
+            // textBox_totalPrice
+            // 
+            this.textBox_totalPrice.Location = new System.Drawing.Point(177, 470);
+            this.textBox_totalPrice.Name = "textBox_totalPrice";
+            this.textBox_totalPrice.Size = new System.Drawing.Size(482, 42);
+            this.textBox_totalPrice.TabIndex = 31;
+            // 
+            // label_totalPrice
+            // 
+            this.label_totalPrice.AutoSize = true;
+            this.label_totalPrice.Location = new System.Drawing.Point(170, 408);
+            this.label_totalPrice.Name = "label_totalPrice";
+            this.label_totalPrice.Size = new System.Drawing.Size(188, 38);
+            this.label_totalPrice.TabIndex = 30;
+            this.label_totalPrice.Text = "TOTAL PRICE";
+            // 
             // AddSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 752);
+            this.Controls.Add(this.textBox_totalPrice);
+            this.Controls.Add(this.label_totalPrice);
             this.Controls.Add(this.dateTimePicker_saleDate);
             this.Controls.Add(this.button_addSales);
             this.Controls.Add(this.label_saleDate);
@@ -188,5 +209,7 @@
         private System.Windows.Forms.Label label_companyName;
         private System.Windows.Forms.Label label_medicineName;
         private System.Windows.Forms.Label label_addSales;
+        private System.Windows.Forms.TextBox textBox_totalPrice;
+        private System.Windows.Forms.Label label_totalPrice;
     }
 }

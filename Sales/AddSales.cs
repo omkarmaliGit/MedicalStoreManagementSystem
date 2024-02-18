@@ -89,6 +89,65 @@ namespace MedicalStoreManagementSystem.Sales
             }
         }
 
+        private void updateStock()
+        {
+            query = $"SELECT quantity FROM stockRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
+            dr = db.getData(query);
+            dr.Read();
+            int oldQuantity = Convert.ToInt32(dr[0].ToString());
+            int newQuantity = Convert.ToInt32(textBox_quantity.Text);
+            int updatedQuantity = oldQuantity - newQuantity;
+
+            db.closeConnection();
+
+            query = $"UPDATE stockRecord SET quantity = '{updatedQuantity}' WHERE medicineName = '{comboBox_medicineName.Text}'";
+            db.setData(query);
+            MessageBox.Show("stock Updated");
+        }
+
+        private void updateSales()
+        {
+            //quantity
+            query = $"SELECT quantity FROM salesRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
+            dr = db.getData(query);
+            dr.Read();
+            int oldQuantity = Convert.ToInt32(dr[0].ToString());
+            int newQuantity = Convert.ToInt32(textBox_quantity.Text);
+            int updatedQuantity = oldQuantity + newQuantity;
+
+            db.closeConnection();
+
+            query = $"UPDATE salesRecord SET quantity = '{updatedQuantity}' WHERE medicineName = '{comboBox_medicineName.Text}'";
+            db.setData(query);
+
+            //price
+            query = $"SELECT AVG(salePrice) FROM sales WHERE medicineName = '{comboBox_medicineName.Text}'";
+            dr = db.getData(query);
+            dr.Read();
+            int updatedPrice = Convert.ToInt32( dr[0].ToString());
+
+            db.closeConnection();
+
+            query = $"UPDATE salesRecord SET avgPrice = '{updatedPrice}' WHERE medicineName = '{comboBox_medicineName.Text}'";
+            db.setData(query);
+
+            //profit
+            query = $"SELECT AVG(stockPrice) FROM stock WHERE medicineName = '{comboBox_medicineName.Text}'";
+            dr = db.getData(query);
+            dr.Read();
+            int updatedStockPrice = Convert.ToInt32(dr[0].ToString());
+
+            int Profit = updatedPrice - updatedStockPrice;
+
+            db.closeConnection();
+
+            query = $"UPDATE salesRecord SET profitLoss = '{Profit}' WHERE medicineName = '{comboBox_medicineName.Text}'";
+            db.setData(query);
+
+
+            MessageBox.Show("sales Updated");
+        }
+
         private void button_addSales_Click(object sender, EventArgs e)
         {
             try
@@ -101,46 +160,62 @@ namespace MedicalStoreManagementSystem.Sales
                         {
                             if (textBox_price.Text != "")
                             {
-                                if (dateTimePicker_saleDate.Text != "")
+
+                                if (textBox_totalPrice.Text == Convert.ToString(Convert.ToInt32(textBox_quantity.Text) * Convert.ToInt32(textBox_price.Text)))
                                 {
 
-                                    query = $"SELECT quantity FROM stockRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
-                                    dr = db.getData(query);
-                                    dr.Read();
-                                    int quantity = Convert.ToInt32(dr[0].ToString());
-
-                                    if (quantity > 0 && quantity >= Convert.ToInt32(textBox_quantity.Text))
+                                    if (dateTimePicker_saleDate.Text != "")
                                     {
-                                        db.closeConnection();
-
-                                        query = $"INSERT INTO sales (medicineName, companyName, saleQuantity, salePrice, saleDate) values ('{comboBox_medicineName.Text}','{comboBox_companyName.Text}','{textBox_quantity.Text}','{textBox_price.Text}',Convert(date,'{dateTimePicker_saleDate.Text}',103))";
-                                        db.setData(query);
-                                        MessageBox.Show("Sale Entry Done");
 
                                         query = $"SELECT quantity FROM stockRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
                                         dr = db.getData(query);
                                         dr.Read();
-                                        int oldQuantity = Convert.ToInt32(dr[0].ToString());
-                                        int newQuantity = Convert.ToInt32(textBox_quantity.Text);
-                                        int updatedQuantity = oldQuantity - newQuantity;
+                                        int quantity = Convert.ToInt32(dr[0].ToString());
 
-                                        db.closeConnection();
+                                        if (quantity > 0 && quantity >= Convert.ToInt32(textBox_quantity.Text))
+                                        {
+                                            db.closeConnection();
 
-                                        query = $"UPDATE stockRecord SET quantity = '{updatedQuantity}' WHERE medicineName = '{comboBox_medicineName.Text}'";
-                                        db.setData(query);
-                                        MessageBox.Show("quantity Updated");
+                                            query = $"INSERT INTO sales (medicineName, companyName, saleQuantity, salePrice, saleTotalPrice, saleDate) values ('{comboBox_medicineName.Text}','{comboBox_companyName.Text}','{textBox_quantity.Text}','{textBox_price.Text}', '{textBox_totalPrice.Text}',Convert(date,'{dateTimePicker_saleDate.Text}',103))";
+                                            db.setData(query);
+                                            MessageBox.Show("Sale Entry Done");
+
+                                            updateStock();
+
+                                            query = $"SELECT medicineName FROM salesRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
+                                            dr = db.getData(query);
+                                            if (dr.Read())
+                                            {
+                                                db.closeConnection();
+
+                                                updateSales();
+                                            }
+                                            else
+                                            {
+                                                db.closeConnection();
+
+                                                query = $"INSERT INTO salesRecord (medicineName) values ('{comboBox_medicineName.Text}')";
+                                                db.setData(query);
+
+                                                updateSales();
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Medicine is not in stock");
+                                        }
+
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Medicine is not in stock");
+                                        MessageBox.Show("Sales Date is Not Selected");
                                     }
-                                    
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Sales Date is Not Selected");
+                                    MessageBox.Show("Enter Total Price");
                                 }
-
                             }
                             else
                             {
@@ -171,6 +246,11 @@ namespace MedicalStoreManagementSystem.Sales
             {
                 db.closeConnection();
             }
+        }
+
+        private void textBox_price_TextChanged(object sender, EventArgs e)
+        {
+            textBox_totalPrice.Text = Convert.ToString(Convert.ToInt32(textBox_quantity.Text) * Convert.ToInt32(textBox_price.Text));
         }
     }
 }

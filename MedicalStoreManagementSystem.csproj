@@ -196,6 +196,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\SalesReport.resx">
+      <DependentUpon>SalesReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\StockReport.resx">
       <DependentUpon>StockReport.cs</DependentUpon>
     </EmbeddedResource>

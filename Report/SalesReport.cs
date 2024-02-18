@@ -16,5 +16,28 @@ namespace MedicalStoreManagementSystem.Report
         {
             InitializeComponent();
         }
+
+        DataBase db = new DataBase();
+        DataTable dt;
+        string query;
+
+        private void SalesReport_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                query = $"SELECT * FROM salesRecord";
+                dt = db.getTable(query);
+                dataGridView_salesReport.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
     }
 }

@@ -37,7 +37,7 @@
             // 
             this.dataGridView_salesEntry.AllowUserToAddRows = false;
             this.dataGridView_salesEntry.AllowUserToDeleteRows = false;
-            this.dataGridView_salesEntry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView_salesEntry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_salesEntry.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_salesEntry.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_salesEntry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
