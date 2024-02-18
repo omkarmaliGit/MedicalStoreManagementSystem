@@ -90,12 +90,10 @@ namespace MedicalStoreManagementSystem.Stock
 
         private void updateStock()
         {
-            query = $"SELECT quantity FROM stockRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
+            query = $"SELECT SUM(stockQuantity) FROM stock WHERE medicineName = '{comboBox_medicineName.Text}'";
             dr = db.getData(query);
             dr.Read();
-            int oldQuantity = Convert.ToInt32(dr[0].ToString());
-            int newQuantity = Convert.ToInt32(textBox_quantity.Text);
-            int updatedQuantity = oldQuantity + newQuantity;
+            int updatedQuantity = Convert.ToInt32(dr[0].ToString());
 
             db.closeConnection();
 
@@ -187,7 +185,16 @@ namespace MedicalStoreManagementSystem.Stock
 
         private void textBox_price_TextChanged(object sender, EventArgs e)
         {
-            textBox_totalPrice.Text = Convert.ToString(Convert.ToInt32(textBox_quantity.Text) * Convert.ToInt32(textBox_price.Text));
+            try
+            {
+
+                textBox_totalPrice.Text = Convert.ToString(Convert.ToInt32(textBox_quantity.Text) * Convert.ToInt32(textBox_price.Text));
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

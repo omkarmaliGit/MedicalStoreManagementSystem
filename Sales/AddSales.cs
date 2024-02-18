@@ -78,6 +78,30 @@ namespace MedicalStoreManagementSystem.Sales
                 {
                     comboBox_companyName.Text = dr[0].ToString();
                 }
+
+                db.closeConnection();
+
+
+                query = $"SELECT medicineName FROM stock WHERE medicineName = '{comboBox_medicineName.Text}'";
+                dr = db.getData(query);
+           
+                if (dr.Read())
+                {
+                    db.closeConnection();
+
+                    query = $"SELECT AVG(stockPrice) FROM stock WHERE medicineName = '{comboBox_medicineName.Text}'";
+                    dr = db.getData(query);
+                    dr.Read();
+                    int avgStockPrice = Convert.ToInt32(dr[0].ToString());
+
+
+                    textBox_price.Text = avgStockPrice.ToString();
+
+                }
+                else
+                {
+                    MessageBox.Show("Medicine is not in stock");
+                }
             }
             catch (Exception ex)
             {
@@ -91,11 +115,18 @@ namespace MedicalStoreManagementSystem.Sales
 
         private void updateStock()
         {
-            query = $"SELECT quantity FROM stockRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
+            query = $"SELECT SUM(stockQuantity) FROM stock WHERE medicineName = '{comboBox_medicineName.Text}'";
             dr = db.getData(query);
             dr.Read();
             int oldQuantity = Convert.ToInt32(dr[0].ToString());
-            int newQuantity = Convert.ToInt32(textBox_quantity.Text);
+
+            db.closeConnection();
+
+            query = $"SELECT SUM(saleQuantity) FROM sales WHERE medicineName = '{comboBox_medicineName.Text}'";
+            dr = db.getData(query);
+            dr.Read();
+            int newQuantity = Convert.ToInt32(dr[0].ToString());
+
             int updatedQuantity = oldQuantity - newQuantity;
 
             db.closeConnection();
@@ -108,12 +139,10 @@ namespace MedicalStoreManagementSystem.Sales
         private void updateSales()
         {
             //quantity
-            query = $"SELECT quantity FROM salesRecord WHERE medicineName = '{comboBox_medicineName.Text}'";
+            query = $"SELECT SUM(saleQuantity) FROM sales WHERE medicineName = '{comboBox_medicineName.Text}'";
             dr = db.getData(query);
             dr.Read();
-            int oldQuantity = Convert.ToInt32(dr[0].ToString());
-            int newQuantity = Convert.ToInt32(textBox_quantity.Text);
-            int updatedQuantity = oldQuantity + newQuantity;
+            int updatedQuantity = Convert.ToInt32(dr[0].ToString());
 
             db.closeConnection();
 
@@ -124,7 +153,7 @@ namespace MedicalStoreManagementSystem.Sales
             query = $"SELECT AVG(salePrice) FROM sales WHERE medicineName = '{comboBox_medicineName.Text}'";
             dr = db.getData(query);
             dr.Read();
-            int updatedPrice = Convert.ToInt32( dr[0].ToString());
+            int updatedPrice = Convert.ToInt32(dr[0].ToString());
 
             db.closeConnection();
 
@@ -250,7 +279,42 @@ namespace MedicalStoreManagementSystem.Sales
 
         private void textBox_price_TextChanged(object sender, EventArgs e)
         {
-            textBox_totalPrice.Text = Convert.ToString(Convert.ToInt32(textBox_quantity.Text) * Convert.ToInt32(textBox_price.Text));
+            try
+            {
+                int quantity;
+                if (textBox_quantity.Text != "")
+                {
+                    quantity = Convert.ToInt32(textBox_quantity.Text);
+                }
+                else
+                {
+                    quantity = 1;
+                }
+
+                int price = Convert.ToInt32(textBox_price.Text);
+
+                textBox_totalPrice.Text = Convert.ToString(quantity * price);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textBox_quantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int quantity = Convert.ToInt32(textBox_quantity.Text);
+                int price = Convert.ToInt32(textBox_price.Text);
+
+                textBox_totalPrice.Text = Convert.ToString(quantity * price);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

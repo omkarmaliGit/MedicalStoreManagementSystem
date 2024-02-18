@@ -55,38 +55,61 @@ namespace MedicalStoreManagementSystem.Medicine
             {
                 try
                 {
-
-                    query = $"SELECT quantity FROM stockRecord WHERE medicineName = '{comboBox_medicine.Text}'";
+                    query = $"SELECT medicineName FROM stockRecord WHERE medicineName = '{comboBox_medicine.Text}'";
                     dr = db.getData(query);
-                    dr.Read();
-                    int quantity = Convert.ToInt32(dr[0].ToString());
-                    db.closeConnection();
 
-                    if (quantity > 0)
+                    if(dr.Read())
                     {
-                        MessageBox.Show("Medicine Available In Stock, first Remove from Stock");
+                        db.closeConnection();
+
+                        query = $"SELECT quantity FROM stockRecord WHERE medicineName = '{comboBox_medicine.Text}'";
+                        dr = db.getData(query);
+                        dr.Read();
+                        int quantity = Convert.ToInt32(dr[0].ToString());
+
+                        db.closeConnection();
+
+                        if (quantity > 0)
+                        {
+                            MessageBox.Show("Medicine Available In Stock, first Remove from Stock");
+                        }
+                        else
+                        {
+
+
+                            if (quantity == 0)
+                            {
+                                query = $"DELETE FROM stockRecord WHERE medicineName = '{comboBox_medicine.Text}'";
+                                db.setData(query);
+
+                                query = $"DELETE FROM medicine WHERE medicineName = '{comboBox_medicine.Text}'";
+                                db.setData(query);
+
+                                MessageBox.Show("Medicine Deleted");
+                            }
+
+
+                            comboBox_medicine.Items.Clear();
+                            Load_Medicine();
+                            comboBox_medicine.Text = string.Empty;
+                            comboBox_medicine.Focus();
+                        }
                     }
                     else
                     {
+                        db.closeConnection();
 
+                        query = $"DELETE FROM medicine WHERE medicineName = '{comboBox_medicine.Text}'";
+                        db.setData(query);
 
-                        if (quantity == 0)
-                        {
-                            query = $"DELETE FROM stockRecord WHERE medicineName = '{comboBox_medicine.Text}'";
-                            db.setData(query);
-
-                            query = $"DELETE FROM medicine WHERE medicineName = '{comboBox_medicine.Text}'";
-                            db.setData(query);
-
-                            MessageBox.Show("Medicine Deleted");
-                        }
-
+                        MessageBox.Show("Medicine Deleted");
 
                         comboBox_medicine.Items.Clear();
                         Load_Medicine();
                         comboBox_medicine.Text = string.Empty;
                         comboBox_medicine.Focus();
                     }
+                    
                 }
                 catch (Exception ex)
                 {

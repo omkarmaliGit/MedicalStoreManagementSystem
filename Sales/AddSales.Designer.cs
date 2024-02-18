@@ -86,6 +86,7 @@
             this.textBox_quantity.Name = "textBox_quantity";
             this.textBox_quantity.Size = new System.Drawing.Size(482, 42);
             this.textBox_quantity.TabIndex = 23;
+            this.textBox_quantity.TextChanged += new System.EventHandler(this.textBox_quantity_TextChanged);
             // 
             // label_price
             // 
