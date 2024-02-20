@@ -40,5 +40,24 @@ namespace MedicalStoreManagementSystem.Sales
                 db.closeConnection();
             }
         }
+
+        private void button_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = $"SELECT * FROM sales WHERE saleDate BETWEEN Convert(date, '{dateTimePicker_from.Text}',103) AND Convert(date, '{dateTimePicker_To.Text}',103)";
+                dt = db.getTable(query);
+                dataGridView_salesEntry.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
     }
 }

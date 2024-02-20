@@ -127,12 +127,6 @@
     <Compile Include="Sales\AddSales.Designer.cs">
       <DependentUpon>AddSales.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sales\UpdateSales.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sales\UpdateSales.Designer.cs">
-      <DependentUpon>UpdateSales.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sales\ViewSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,12 +138,6 @@
     </Compile>
     <Compile Include="Stock\AddStock.Designer.cs">
       <DependentUpon>AddStock.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stock\UpdateStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Stock\UpdateStock.Designer.cs">
-      <DependentUpon>UpdateStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Stock\ViewStock.cs">
       <SubType>Form</SubType>

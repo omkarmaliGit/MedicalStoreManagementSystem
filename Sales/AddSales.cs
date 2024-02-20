@@ -189,10 +189,8 @@ namespace MedicalStoreManagementSystem.Sales
                         {
                             if (textBox_price.Text != "")
                             {
-
                                 if (textBox_totalPrice.Text == Convert.ToString(Convert.ToInt32(textBox_quantity.Text) * Convert.ToInt32(textBox_price.Text)))
                                 {
-
                                     if (dateTimePicker_saleDate.Text != "")
                                     {
 

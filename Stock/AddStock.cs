@@ -90,10 +90,32 @@ namespace MedicalStoreManagementSystem.Stock
 
         private void updateStock()
         {
+            //query = $"SELECT SUM(stockQuantity) FROM stock WHERE medicineName = '{comboBox_medicineName.Text}'";
+            //dr = db.getData(query);
+            //dr.Read();
+            //int updatedQuantity = Convert.ToInt32(dr[0].ToString());
+
             query = $"SELECT SUM(stockQuantity) FROM stock WHERE medicineName = '{comboBox_medicineName.Text}'";
             dr = db.getData(query);
             dr.Read();
-            int updatedQuantity = Convert.ToInt32(dr[0].ToString());
+            int oldQuantity = Convert.ToInt32(dr[0].ToString());
+
+            db.closeConnection();
+
+            query = $"SELECT SUM(saleQuantity) FROM sales WHERE medicineName = '{comboBox_medicineName.Text}'";
+            dr = db.getData(query);
+            dr.Read();
+            int newQuantity;
+            if (dr[0].ToString() == "")
+            {
+                newQuantity = 0;
+            }
+            else
+            {
+                newQuantity = Convert.ToInt32(dr[0].ToString());
+            }
+
+            int updatedQuantity = oldQuantity - newQuantity;
 
             db.closeConnection();
 
@@ -114,7 +136,7 @@ namespace MedicalStoreManagementSystem.Stock
                         {
                             if (textBox_price.Text != "")
                             {
-                                if (textBox_totalPrice.Text == Convert.ToString(Convert.ToInt32(textBox_quantity.Text)* Convert.ToInt32(textBox_price.Text)))
+                                if (textBox_totalPrice.Text == Convert.ToString(Convert.ToInt32(textBox_quantity.Text) * Convert.ToInt32(textBox_price.Text)))
                                 {
 
                                     if (dateTimePicker_expiryDate.Text != "")
@@ -138,7 +160,7 @@ namespace MedicalStoreManagementSystem.Stock
                                             query = $"INSERT INTO stockRecord (medicineName) values ('{comboBox_medicineName.Text}')";
                                             db.setData(query);
 
-                                           updateStock();
+                                            updateStock();
                                         }
                                     }
                                     else
@@ -190,11 +212,12 @@ namespace MedicalStoreManagementSystem.Stock
 
                 textBox_totalPrice.Text = Convert.ToString(Convert.ToInt32(textBox_quantity.Text) * Convert.ToInt32(textBox_price.Text));
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
     }
 }

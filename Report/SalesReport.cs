@@ -39,5 +39,24 @@ namespace MedicalStoreManagementSystem.Report
                 db.closeConnection();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                query = $"SELECT * FROM salesRecord WHERE medicineName like '{textBox1.Text}%'";
+                dt = db.getTable(query);
+                dataGridView_salesReport.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
     }
 }

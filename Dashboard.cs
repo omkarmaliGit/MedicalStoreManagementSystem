@@ -150,16 +150,6 @@ namespace MedicalStoreManagementSystem
 
         }
 
-        private void updateSTOCK_ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            panel.Controls.Clear();
-            UpdateStock ust = new UpdateStock() { TopLevel = false, TopMost = true };
-            ust.FormBorderStyle = FormBorderStyle.None;
-            panel.Controls.Add(ust);
-            ust.Show();
-
-        }
-
 
         //Sales
         private void addSALES_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,15 +169,6 @@ namespace MedicalStoreManagementSystem
             vis.FormBorderStyle = FormBorderStyle.None;
             panel.Controls.Add(vis);
             vis.Show();
-        }
-
-        private void updateSALES_ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            panel.Controls.Clear();
-            UpdateSales ups = new UpdateSales() { TopLevel = false, TopMost = true };
-            ups.FormBorderStyle = FormBorderStyle.None;
-            panel.Controls.Add(ups);
-            ups.Show();
         }
 
 
@@ -211,10 +192,6 @@ namespace MedicalStoreManagementSystem
             sar.Show();
 
         }
-
-
-
-
 
     }
 }

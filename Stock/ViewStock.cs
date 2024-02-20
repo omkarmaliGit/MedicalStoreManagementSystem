@@ -39,5 +39,24 @@ namespace MedicalStoreManagementSystem.Stock
                 db.closeConnection();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                query = $"SELECT * FROM stock WHERE purchaseDate BETWEEN Convert(date, '{dateTimePicker_from.Text}',103) AND Convert(date, '{dateTimePicker_To.Text}',103)";
+                dt = db.getTable(query);
+                dataGridView_stockEntry.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
     }
 }
