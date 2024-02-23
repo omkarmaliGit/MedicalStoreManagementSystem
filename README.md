@@ -1,32 +1,32 @@
 # Medical Store Management System
 
-# Description:
+<h2>Description:</h2>
 
 This Windows application is designed to streamline medical store management, enabling efficient management of medicines, companies, stock, and sales. It offers a user-friendly interface and intuitive CRUD operations (Create, Read, Update, Delete) for:
-Medicines: Add, view, edit, and delete medicine information, including name, generic name, manufacturer, and more.
-Companies: Manage supplier details, such as name, address, and contact information.
-Stock: Track medicine inventory levels, including purchase dates, quantities, price, expiry date, and costs. Generate stock reports to gain insights into current stock levels and to identify potential low-stock situations.
-Sales: Record sales transactions, capturing details like date, customer information, sold medicines, quantities, and selling prices. Calculate sales statistics such as total quantity sold, average selling price, and profit per unit for each medicine.
+- Medicines: Add, view, edit, and delete medicine information, including name, generic name, manufacturer, and more.
+- Companies: Manage supplier details, such as name, address, and contact information.
+- Stock: Track medicine inventory levels, including purchase dates, quantities, price, expiry date, and costs. Generate stock reports to gain insights into current stock levels and to identify potential low-stock situations.
+- Sales: Record sales transactions, capturing details like date, customer information, sold medicines, quantities, and selling prices. Calculate sales statistics such as total quantity sold, average selling price, and profit per unit for each medicine.
 
-Key Features:
+<h2>Key Features:</h2>
 
-User-friendly interface: The application boasts a clear and intuitive interface that is easy to navigate, even for non-technical users.
-Comprehensive medicine management: Add, edit, and delete medicine details with ease, ensuring accurate and up-to-date information.
-Efficient stock tracking: Manage stock levels effectively, prevent stockouts, and optimize inventory management.
-Sales reporting: Generate detailed reports on sales data, providing insights into sales trends, profitability, and customer preferences.
+- User-friendly interface: The application boasts a clear and intuitive interface that is easy to navigate, even for non-technical users.
+- Comprehensive medicine management: Add, edit, and delete medicine details with ease, ensuring accurate and up-to-date information.
+- Efficient stock tracking: Manage stock levels effectively, prevent stockouts, and optimize inventory management.
+- Sales reporting: Generate detailed reports on sales data, providing insights into sales trends, profitability, and customer preferences.
 
-Technologies Used:
+<h2>Technologies Used:</h2>
 
 C#, .NET Framework, Windows Forms, ADO.NET, MSSQL, Visual Studio
 
-Installation:
+<h2>Installation:</h2>
 
-Download the ZIP file or open in Visual Studio from the "Code" section of this repository.
-Extract the downloaded ZIP file to a desired location.
-(Please create database and tables in mssql and change the SqlConnection query in Database.cs file)
-After Opening in Visual Studio start the application.
+- Download the ZIP file or open in Visual Studio from the "Code" section of this repository.
+- Extract the downloaded ZIP file to a desired location.
+- (Please create database and tables in mssql and change the SqlConnection query in Database.cs file)
+- After Opening in Visual Studio start the application.
 
-Usage:
+<h2>Usage:</h2>
 
 To Provide clear instructions on how to use the application, including navigation, CRUD operations, and report I'm going to attach screenshots below.
 
