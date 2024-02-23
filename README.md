@@ -1,6 +1,6 @@
 # Medical Store Management System
 
-Description:
+# Description:
 
 This Windows application is designed to streamline medical store management, enabling efficient management of medicines, companies, stock, and sales. It offers a user-friendly interface and intuitive CRUD operations (Create, Read, Update, Delete) for:
 Medicines: Add, view, edit, and delete medicine information, including name, generic name, manufacturer, and more.
