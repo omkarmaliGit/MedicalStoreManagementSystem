@@ -24,7 +24,7 @@ C#, .NET Framework, Windows Forms, ADO.NET, MSSQL, Visual Studio
 - Download the ZIP file or open in Visual Studio from the "Code" section of this repository.
 - Extract the downloaded ZIP file to a desired location.
 - (Please create database and tables in mssql and change the SqlConnection query in Database.cs file)
-- After Opening in Visual Studio start the application.
+- After Opening in Visual Studio Create new Project and Copy Paste all files and start the application.
 
 <h2>Usage:</h2>
 
